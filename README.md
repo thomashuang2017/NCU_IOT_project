@@ -3,7 +3,7 @@
 智慧遠端開關機電腦手臂為將樹梅派連上馬達，控制馬達轉動，馬達再和機械手臂接上，接著控制馬達能夠轉動大概 90 到 120 度左右，且固定架設在電腦主機上並連上電源及網路線，尖頭則以軟式尖頭，避免刮傷電腦，為了要準確判斷並且通知使用者，利用攝像頭及影像辨識電腦電源是否開關機，最後以 LineBot 進行控制。
 
 ## 作品影片
-[![Youtube影片連結](https://github.com/thomashuang2017/NCU_IOT_project/tree/master/image/pic.PNG)](https://www.youtube.com/watch?v=wZTWNNkhrE8&t=2s)
+[![Youtube影片連結](https://github.com/thomashuang2017/NCU_IOT_project/blob/master/image/pic.png)](https://www.youtube.com/watch?v=wZTWNNkhrE8&t=2s)
 
 ## Necessary
 1. Raspberry pi
