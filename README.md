@@ -36,12 +36,12 @@ Dowload ngrok: https://ngrok.com/
 **建議你可以先執行 LineBot 官方範例並且能跟你的 Line 回應溝通**
 
 ## Step3: 影像辨識模型
-我們需要用到影像辨識來判斷電腦有無開關機，此 project 拍攝了各15張不同角度開機及關機照片當成訓練集，並且用簡單的 CNN + pooling 模型訓練，除了不同角度外也可以用Data augmentation 旋轉平移照片增加模型準確度，我們用 keras 訓練模型後轉成 opencv 可以用的格式，準確度在驗證上的分數高達99.99%，以下為模型資訊:
+我們需要用到影像辨識來判斷電腦有無開關機，此 project 拍攝了各5張不同角度開機及關機照片當成訓練集，並且用簡單的 CNN + pooling 模型訓練，除了不同角度外也可以用Data augmentation 旋轉平移照片增加模型準確度，我們用 keras 訓練模型後轉成 opencv 可以用的格式，準確度在驗證上的分數高達99.99%，以下為模型資訊，你可以先看此 project 範例照片及訓練過程，然後使用你自己拍的照片去訓練你自己的模型:
 ```shell
 # 模型
 model/boost_cls_model.pb
 
-# 訓練資料
+# 訓練資料 
 training_data/Boost/
 training_data/Not_Boost/
 
@@ -51,6 +51,7 @@ training_model.ipynb
 # 模型串接flask
 Image_boot_cls.py
 ```
+
 
 ## Step4: 機械手臂製作
 此 project 用 [meARM](https://m.ruten.com.tw/goods/show.php?g=21928057912376&fbclid=IwAR2dA_oOykf56BuWX7ER6rZLLNIGhjvFxnxaJcyj9RfDjTxjq0tZaL-17es)中的機械手臂當作材料，
