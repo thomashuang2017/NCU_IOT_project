@@ -2,10 +2,13 @@
 
 智慧遠端開關機電腦手臂為將樹梅派連上馬達，控制馬達轉動，馬達再和機械手臂接上，接著控制馬達能夠轉動大概 90 到 120 度左右，且固定架設在電腦主機上並連上電源及網路線，尖頭則以軟式尖頭，避免刮傷電腦，為了要準確判斷並且通知使用者，利用攝像頭及影像辨識電腦電源是否開關機，最後以 LineBot 進行控制。
 
+## 作品影片
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=wZTWNNkhrE8&t=2s)
+
 ## Necessary
 1. Raspberry pi
 2. 鏡頭
-3. 伺服馬達
+3. 伺服馬達 MG996R
 4. 機械手臂
 5. Intel Neural Compute stick 2
 
@@ -36,28 +39,43 @@ Dowload ngrok: https://ngrok.com/
 **建議你可以先執行 LineBot 官方範例並且能跟你的 Line 回應溝通**
 
 ## Step3: 影像辨識模型
-我們需要用到影像辨識來判斷電腦有無開關機，此 project 拍攝了各15張不同角度開機及關機照片當成訓練集，並且用簡單的 CNN + pooling 模型訓練，除了不同角度外也可以用Data augmentation 旋轉平移照片增加模型準確度，我們用 keras 訓練模型後轉成 opencv 可以用的格式，準確度在驗證上的分數高達99.99%，以下為模型資訊:
+我們需要用到影像辨識來判斷電腦有無開關機，此 project 拍攝了各5張不同角度開機及關機照片當成訓練集，並且用簡單的 CNN + pooling 模型訓練，除了不同角度外也可以用Data augmentation 旋轉平移照片增加模型準確度，我們用 keras 訓練模型後轉成 opencv 可以用的格式，準確度在驗證上的分數高達99.99%，以下為模型資訊，你可以先看此 project 範例照片及訓練過程，然後使用你自己拍的照片去訓練你自己的模型:
 ```shell
 # 模型
-model/Boostcls
+model/boost_cls_model.pb
 
-# 訓練資料
-dataset/
+# 訓練資料 
+training_data/Boost/
+training_data/Not_Boost/
 
-# 訓練過程
-model/training
+# 訓練程式
+training_model.ipynb
 
 # 模型串接flask
-....
-```
-## Step4: 機械手臂製作
-此 project 用 [meARM](https://m.ruten.com.tw/goods/show.php?g=21928057912376&fbclid=IwAR2dA_oOykf56BuWX7ER6rZLLNIGhjvFxnxaJcyj9RfDjTxjq0tZaL-17es)來做機械手臂，用三顆SG90的馬達，附上[影片](http://www.youtube.com/watch?v=xlwTzrsWs48)及[組裝圖教學](https://active.clewm.net/Dsz5aQ?qururl)，控制角度程式為
-```shell
-ARM.py
+Image_boot_cls.py
 ```
 
-## Step5: 手臂動起來 !!
-完成了上述4步驟後，開始讓手臂動起來吧!! 執行以下程式:
+
+## Step4: 機械手臂製作
+此 project 用 [meARM](https://m.ruten.com.tw/goods/show.php?g=21928057912376&fbclid=IwAR2dA_oOykf56BuWX7ER6rZLLNIGhjvFxnxaJcyj9RfDjTxjq0tZaL-17es)中的機械手臂當作材料，
+因為原本 meARM 附上的 sg90 馬達扭力不夠，因此改用一顆MG996R的馬達控制手臂，
+在此附上meARM[教學影片](http://www.youtube.com/watch?v=xlwTzrsWs48)及[組裝圖教學](https://active.clewm.net/Dsz5aQ?qururl)，控制角度程式為
+```shell
+Servo.py
+```
+
+## Step5: 確認網路
+你可以將:
+```shell
+ping.py
+```
+這支程式的 hostname 改成你要遠端的ip，這樣才能確認網路狀態是否可以遠端
+**如果你要遠端的電腦是windows，請先把防火牆中的ICMP打開，才能ping的到，[參考資料](https://benson82208.pixnet.net/blog/post/43829710-%E8%A7%A3%E6%B1%BAping%E4%B8%8D%E5%88%B0windows-10-%E6%96%B9%E6%B3%95)**
+
+## Step6: 手臂動起來 !!
+完成了上述5步驟後，開始讓手臂動起來吧!! 
+伺服馬達的棕、紅、橘分別接在GPIO Board上的 9,4,12號，手臂會從垂直0度順時針旋轉100度，
+接著執行以下程式:
 ```shell
 python main.py
 ```
