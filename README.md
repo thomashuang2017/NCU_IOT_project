@@ -5,6 +5,9 @@
 ## 作品影片
 [![Youtube影片連結](https://github.com/thomashuang2017/NCU_IOT_project/blob/master/image/pic.png)](https://www.youtube.com/watch?v=wZTWNNkhrE8&t=2s)
 
+## 作品圖
+![pic1](https://github.com/thomashuang2017/NCU_IOT_project/blob/master/image/pic1.jpg) ![pic3](https://github.com/thomashuang2017/NCU_IOT_project/blob/master/image/pic3.jpg)
+
 ## Necessary
 1. Raspberry pi
 2. 鏡頭
@@ -83,6 +86,16 @@ python main.py
 1. main.py 的 flask port 及 ngrok port 是否一致 
 2. Channel secret, Channel access token 及 Webhook URL 是否輸入正確
 3. 機械手臂如果不動，有可能是電壓不夠，可以用麵包板再接額外電池連接
+
+## Reference
+https://projects.raspberrypi.org/en/projects/python-web-server-with-flask
+https://ngrok.com/
+https://developers.line.biz/zh-hant/services/messaging-api/
+https://github.com/line/line-bot-sdk-python
+https://m.ruten.com.tw/goods/show.php?g=21928057912376&fbclid=IwAR2dA_oOykf56BuWX7ER6rZLLNIGhjvFxnxaJcyj9RfDjTxjq0tZaL-17es
+http://www.youtube.com/watch?v=xlwTzrsWs48
+https://active.clewm.net/Dsz5aQ?qururl
+https://benson82208.pixnet.net/blog/post/43829710-%E8%A7%A3%E6%B1%BAping%E4%B8%8D%E5%88%B0windows-10-%E6%96%B9%E6%B3%95
 
 
 
