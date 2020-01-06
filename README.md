@@ -62,7 +62,7 @@ Image_boot_cls.py
 ## Step4: 機械手臂製作
 此 project 用 [meARM](https://m.ruten.com.tw/goods/show.php?g=21928057912376&fbclid=IwAR2dA_oOykf56BuWX7ER6rZLLNIGhjvFxnxaJcyj9RfDjTxjq0tZaL-17es)中的機械手臂當作材料，
 因為原本 meARM 附上的 sg90 馬達扭力不夠，因此改用一顆MG996R的馬達控制手臂，
-在此附上meARM[教學影片](http://www.youtube.com/watch?v=xlwTzrsWs48)及[組裝圖教學](https://active.clewm.net/Dsz5aQ?qururl)，控制角度程式為
+在此附上meARM[教學影片](http://www.youtube.com/watch?v=xlwTzrsWs48)及[組裝圖教學](https://active.clewm.net/Dsz5aQ?qururl)，控制角度程式為:
 ```shell
 Servo.py
 ```
@@ -72,8 +72,7 @@ Servo.py
 ```shell
 ping.py
 ```
-這支程式的 hostname 改成你要遠端的ip，這樣才能確認網路狀態是否可以遠端
-**如果你要遠端的電腦是windows，請先把防火牆中的ICMP打開，才能ping的到，[參考資料](https://benson82208.pixnet.net/blog/post/43829710-%E8%A7%A3%E6%B1%BAping%E4%B8%8D%E5%88%B0windows-10-%E6%96%B9%E6%B3%95)**
+這支程式的 hostname 改成你要遠端的ip，這樣才能確認網路狀態是否可以遠端，**如果你要遠端的電腦是windows，請先把防火牆中的ICMP打開，才能ping的到，[參考資料](https://benson82208.pixnet.net/blog/post/43829710-%E8%A7%A3%E6%B1%BAping%E4%B8%8D%E5%88%B0windows-10-%E6%96%B9%E6%B3%95)**
 
 ## Step6: 手臂動起來 !!
 完成了上述5步驟後，開始讓手臂動起來吧!! 
